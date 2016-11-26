@@ -11,13 +11,16 @@ function getFilesFromInput(event) {
 
 function resizeImageAndGetMetadata(file) {
     /*Get metadata of image (GPS Coordinates)*/
-    EXIF.getData(file, function () {
+    EXIF.getData(file, function (dat) {
         let lat = EXIF.getTag(file, 'GPSLatitude');
         let longt = EXIF.getTag(file, 'GPSLongitude');
+
         lat = lat[0].numerator + lat[1].numerator /
             (60 * lat[1].denominator) + lat[2].numerator / (3600 * lat[2].denominator);
         longt = longt[0].numerator + longt[1].numerator /
             (60 * longt[1].denominator) + longt[2].numerator / (3600 * longt[2].denominator);
+        console.log(lat)
+        console.log(longt)
         let metadata = {
             latitude: lat,
             longitude: longt,
@@ -34,7 +37,7 @@ function resizeImageAndGetMetadata(file) {
             };
 
             /*After both actions are completed - start upload of current image*/
-            if (file.name.split(".")[1] != "JPG" && file.name.split(".")[1] != "JPEG") {
+            if (file.name.split(".")[1].toUpperCase() != "JPG" && file.name.split(".")[1].toUpperCase() != "JPEG") {
                 showErrorAlert("Invalid Image")
             } else if (!objectToUpload.latitude || !objectToUpload.longitude) {
                 showErrorAlert("Image doesn't contain GPS data")
