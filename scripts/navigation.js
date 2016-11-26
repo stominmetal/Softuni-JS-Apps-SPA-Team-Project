@@ -10,7 +10,8 @@ function showUploadView() {
 
 function showView(view) {
     $('main > section').hide();
-    $('nav div ul li.active').removeAttr("class");
     $(`#${view}`).show();
+    /*Takes care of highligiting in menus and navs */
+    $('nav div ul li.active').removeAttr("class");
     $(`.${view}Button`).parent().addClass("active");
 }
