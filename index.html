@@ -6,30 +6,33 @@
     <title>SPA Project</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="/styles/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="/styles/leaflet.css" rel="stylesheet" />
-    <link href="/styles/style.css" rel="stylesheet"/>
-    <link href="/styles/map.css" rel="stylesheet"/>
-    <link href="/styles/alertify.min.css" rel="stylesheet"/>
+    <link href="styles/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="styles/leaflet.css" rel="stylesheet"/>
+    <link href="styles/style.css" rel="stylesheet"/>
+    <link href="styles/map.css" rel="stylesheet"
+    /
+    <link href="styles/alertify.min.css" rel="stylesheet"/>
 </head>
 <body>
 <nav class="teal" role="navigation">
     <div class="nav-wrapper container">
         <a id="logo-container" href="/" class="brand-logo">SPA Project</a>
         <ul class="right hide-on-med-and-down">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="#" class="galleryButton">Gallery</a></li>
-            <li><a href="#" class="usersButton">Users</a></li>
-            <li><a href="#" class="loginButton">Login</a></li>
-            <li><a href="#" class="registerButton">Register</a></li>
+            <li><a href="#" class="homeViewButton">Home</a></li>
+            <li><a href="#" class="galleryViewButton">Gallery</a></li>
+            <li><a href="#" class="uploadViewButton">Upload</a></li>
+            <li><a href="#" class="usersViewButton">Users</a></li>
+            <li><a href="#" class="loginViewButton">Login</a></li>
+            <li><a href="#" class="registerViewButton">Register</a></li>
             <li><a href="#" class="logoutButton">Log out</a></li>
         </ul>
         <ul id="nav-mobile" class="side-nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="#" class="galleryButton">Gallery</a></li>
-            <li><a href="#" class="usersButton">Users</a></li>
-            <li><a href="#" class="loginButton">Login</a></li>
-            <li><a href="#" class="registerButton">Register</a></li>
+            <li><a href="#" class="homeViewButton">Home</a></li>
+            <li><a href="#" class="galleryViewButton">Gallery</a></li>
+            <li><a href="#" class="uploadViewButton">Upload</a></li>
+            <li><a href="#" class="usersViewButton">Users</a></li>
+            <li><a href="#" class="loginViewButton">Login</a></li>
+            <li><a href="#" class="registerViewButton">Register</a></li>
             <li><a href="#" class="logoutButton">Log out</a></li>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -37,12 +40,65 @@
 </nav>
 
 <main>
-    <section id="mapView">
-    <div class="section no-pad">
-        <div id="homeMap">
+    <section id="homeView">
+        <div class="section no-pad">
+            <div id="homeMap">
 
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section id="galleryView">
+        <div class="container">
+            Add your view's HTML here
+        </div>
+    </section>
+
+    <section id="uploadView">
+        <div class="container">
+            <div class="row">
+                <div class="file-field input-field">
+                    <div class="btn blue-grey">
+                        <span>Upload</span>
+                        <input id="uploadSlector" type="file" multiple>
+                    </div>
+                    <div class="file-path-wrapper" style="width: 60%">
+                        <input class="file-path validate" type="text" placeholder="Upload one or more pictures">
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="bars" style="width: 69%">
+
+                </div>
+            </div>
+
+
+            <div class="section">
+                <div class="images">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="usersView">
+        <div class="container">
+            Add your view's HTML here
+        </div>
+    </section>
+
+    <section id="loginView">
+        <div class="container">
+            Add your view's HTML here
+        </div>
+    </section>
+
+    <section id="registerView">
+        <div class="container">
+            Add your view's HTML here
+        </div>
     </section>
 </main>
 
@@ -56,8 +112,9 @@
             <div class="col l4 s12">
                 <h5 class="white-text">Contact</h5>
                 <ul>
-                    <li><a class="white-text" href="mailto:">(TODO add stomins mail)</a></li>
-                    <li><a class="white-text" href="mailto:biser.p.atanasov@gmail.com">biser.p.atanasov@gmail.com</a></li>
+                    <li><a class="white-text" href="mailto:stoyan@astrapaging.com">stoyan@astrapaging.com</a></li>
+                    <li><a class="white-text" href="mailto:biser.p.atanasov@gmail.com">biser.p.atanasov@gmail.com</a>
+                    </li>
                     <li><a class="white-text" href="mailto:">(TODO add sashos mail)</a></li>
                 </ul>
             </div>
@@ -72,18 +129,30 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            Made by <a href="https://softuni.bg/users/profile/show/stomin">stomin</a> | <a href="https://softuni.bg/users/profile/show/biskazz">biskazz</a> | <a href="https://softuni.bg/users/profile/show/?">(ADD SASHO)</a></a>
+            Made by <a href="https://softuni.bg/users/profile/show/stomin">stomin</a> | <a
+                href="https://softuni.bg/users/profile/show/biskazz">biskazz</a> | <a
+                href="https://softuni.bg/users/profile/show/?">(ADD SASHO)</a></a>
         </div>
     </div>
 </footer>
 
 
-<!--  Scripts-->
-<script src="/scripts/libs/jquery-3.1.1.min.js"></script>
-<script src="/scripts/libs/materialize.min.js"></script>
-<script src="/scripts/init.js"></script>
-<script src="/scripts/libs/leaflet.js"></script>
-<script src="/scripts/libs/alertify.min.js"></script>
-<script src="/scripts/map.js"></script>
+<!--Libraries-->
+<script src="scripts/libs/jquery-3.1.1.min.js"></script>
+<script src="scripts/libs/materialize.min.js"></script>
+<script src="scripts/libs/leaflet.js"></script>
+<script src="scripts/libs/alertify.min.js"></script>
+<script src="scripts/libs/exif.js"></script>
+<script src="scripts/libs/canvas-to-blob.min.js"></script>
+<script src="scripts/libs/resize.js"></script>
+<!--Own Scripts-->
+<script src="scripts/init.js"></script>
+<script src="scripts/navigation.js"></script>
+<script src="scripts/map.js"></script>
+<script src="scripts/upload.js"></script>
+
+<!--Add your scripts ABOVE bindEvents.js-->
+<script src="scripts/bindEvents.js"></script>
+<script src="scripts/main.js"></script>
 </body>
 </html>
