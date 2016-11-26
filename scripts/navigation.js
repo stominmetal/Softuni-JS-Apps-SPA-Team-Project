@@ -1,6 +1,7 @@
 /*Add navigation here*/
 function showHomeView() {
     showView("homeView");
+    loadImagesOnMap();
 }
 
 function showUploadView() {
@@ -9,7 +10,7 @@ function showUploadView() {
 
 function showView(view) {
     $('main > section').hide();
-    $('.active').removeAttr("class")
+    $('nav div ul li.active').removeAttr("class");
     $(`#${view}`).show();
     $(`.${view}Button`).parent().addClass("active");
 }

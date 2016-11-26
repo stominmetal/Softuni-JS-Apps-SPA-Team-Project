@@ -23,24 +23,5 @@ function initMap() {
     map.zoomControl.setPosition('bottomright');
     L.control.layers(baseMaps).addTo(map);
     map.setMaxBounds([[90, -180], [-90, 180]]);
-
-    $("#homeMap").on('click', '.leaflet-marker-icon', function (event) {
-        $('.materialboxed').materialbox();
-    });
-
 }
 
-function addPhotoToMap(image) {
-    let imageUrl = `https://firebasestorage.googleapis.com/v0/b/dronemapper-83b1a.appspot.com/o/images%2FE4QLWhFlJFNLRoZ8J7PcwoXwaCw2%2F-KXM-5VF5e--3P2gaogZ?alt=media&token=bfe6aacf-39df-4ee2-9e6d-9de46dd12855`;
-    let imageLat = 0;
-    let imageLong = 0;
-    let pictureWidth = Math.round($(window).width() / 5);
-    let imageDisplayString = `<img class='materialboxed' width="${pictureWidth}" src=${imageUrl}>`;
-    if (map) {
-        L.marker([imageLat, imageLong])
-            .bindPopup(imageDisplayString, {
-                autoPanPadding: L.point(20, 20),
-            })
-            .addTo(map);
-    }
-}

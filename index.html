@@ -15,7 +15,7 @@
     <link href="styles/style.css" rel="stylesheet"/>
 </head>
 <body>
-<nav class="teal" role="navigation">
+<nav class="blue darken-1" role="navigation">
     <div class="nav-wrapper container">
         <a id="logo-container" href="/" class="brand-logo">Single Page App</a>
         <ul class="right hide-on-med-and-down">
@@ -43,7 +43,7 @@
 <main>
 
     <div class="progress" style="display: none">
-        <div class="indeterminate blue"></div>
+        <div class="indeterminate"></div>
     </div>
 
     <section id="homeView">
@@ -65,11 +65,11 @@
             <div class="row">
                 <div class="file-field input-field">
                     <div class="btn blue-grey">
-                        <span>Upload</span>
-                        <input id="uploadSlector" type="file" multiple>
+                        <span>Select</span>
+                        <input id="uploadSlector" accept="image/jpeg" type="file" multiple>
                     </div>
                     <div class="file-path-wrapper" style="width: 60%">
-                        <input class="file-path validate" type="text" placeholder="Upload one or more pictures">
+                        <input class="file-path validate" type="text" placeholder="Upload picture(s)">
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
     </section>
 </main>
 
-<footer class="page-footer grey darken-1">
+<footer class="page-footer grey darken-2">
     <div class="container">
         <div class="row">
             <div class="col l4 s12">
@@ -150,6 +150,7 @@
 <script src="scripts/helper.js"></script>
 <script src="scripts/navigation.js"></script>
 <script src="scripts/map.js"></script>
+<script src="scripts/home.js"></script>
 <script src="scripts/upload.js"></script>
 
 <!--Add your scripts ABOVE bindEvents.js-->

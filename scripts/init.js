@@ -1,5 +1,4 @@
-/*Materialize framework responsiveness initialization*/
-
+/*Initialize Materialize framework responsiveness*/
 (function ($) {
     $(function () {
         $('.button-collapse').sideNav();
@@ -13,8 +12,5 @@
                 alignment: 'left' // Displays dropdown with edge aligned to the left of button
             }
         );
-        $(document).ready(function() {
-            $('select').material_select();
-        });
     });
 })(jQuery);

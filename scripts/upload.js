@@ -1,15 +1,16 @@
+/*Initialize image resizing library*/
 let resize = new window.resize();
 resize.init();
 
-$("#uploadSlector").change(function (evt) {
-    let files = evt.target.files;
-    for (let i = 0; i < files.length; i++) {
-        let image = evt.target.files[i];
+/*Listen for changes on the input*/
+function getFilesFromInput(event) {
+    for (let image of event.target.files) {
         resizeImageAndGetMetadata(image);
     }
-});
+}
 
 function resizeImageAndGetMetadata(file) {
+    /*Get metadata of image (GPS Coordinates)*/
     EXIF.getData(file, function () {
         let lat = EXIF.getTag(file, 'GPSLatitude');
         let longt = EXIF.getTag(file, 'GPSLongitude');
@@ -23,6 +24,7 @@ function resizeImageAndGetMetadata(file) {
             fileName: file.name
         };
 
+        /*Resize image (500px is small but that's what kinvey allows to upload as base64)*/
         resize.photo(file, 500, 'dataURL', function (resizedImage) {
             let objectToUpload = {
                 image: resizedImage,
@@ -31,8 +33,14 @@ function resizeImageAndGetMetadata(file) {
                 fileName: metadata.fileName
             };
 
-            /*After both actions are completed start upload*/
-            uploadImage(objectToUpload);
+            /*After both actions are completed - start upload of current image*/
+            if (file.name.split(".")[1] != "JPG" && file.name.split(".")[1] != "JPEG") {
+                showErrorAlert("Invalid Image")
+            } else if (!objectToUpload.latitude || !objectToUpload.longitude) {
+                showErrorAlert("Image doesn't contain GPS data")
+            } else {
+                uploadImage(objectToUpload);
+            }
         });
     });
 }
@@ -46,8 +54,9 @@ function uploadImage(image) {
     }).then(imageUploadSuccess).catch(handleAjaxError);
 
     function imageUploadSuccess(data) {
+        /*Requests uploaded images*/
         getUploadedImages(data);
-        showSuccessAlert("Picture upload success")
+        showSuccessAlert(`${data.fileName} uploaded`)
     }
 }
 
@@ -58,13 +67,17 @@ function getUploadedImages(data) {
         headers: getSampleUserAuthHeaders()
     }).then(visualizeUploadedImages).catch(handleAjaxError);
 
+    /*Displays requested images*/
     function visualizeUploadedImages(data) {
         $("#uploadedImagesText").show();
         $(".section .uploadedImages").prepend(`
-            <p>${data.fileName}</p>
+            <p>File Name: ${data.fileName}</p>
+            <div style="width: 70%">
              <img style="border-radius: 2px;" class="materialboxed responsive-img z-depth-1" src="${data.image}">
+             </div>
              <div class="divider"></div>`
         );
+        /*Makes images enlargeable when clicked*/
         $('.materialboxed').materialbox();
     }
 }
