@@ -1,5 +1,4 @@
 /*Add navigation here*/
-
 function showHomeView() {
     showView("homeView");
 }

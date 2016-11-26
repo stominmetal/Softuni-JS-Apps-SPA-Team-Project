@@ -1,24 +1,31 @@
+let resize = new window.resize();
+resize.init();
+
 $("#uploadSlector").change(function (evt) {
     let files = evt.target.files;
     for (let i = 0; i < files.length; i++) {
-        let file = evt.target.files[i];
-        uploadFile(file);
-
-
+        let image = evt.target.files[i];
+        resizeImage(image);
     }
 });
 
-function uploadFile(file) {
-    let src = URL.createObjectURL(file);
-    let fileName = file.name.split(".")[0];
-    let fileExt = file.name.split(".")[1];
+function resizeImage(file) {
     EXIF.getData(file, function () {
-        let location = getLocaiton(file);
-        console.log(location)
+        let metadata = getMetadata(file);
+        resize.photo(file, 500, 'dataURL', function (resizedImage) {
+            let objectToUpload = {
+                image: resizedImage,
+                latitude: metadata.latitude,
+                longitude: metadata.longitude,
+                fileName: metadata.fileName
+            };
+            uploadImage(objectToUpload);
+        });
     });
 }
 
-function getLocaiton(file) {
+function getMetadata(file) {
+    let fileName = file.name;
     let lat = EXIF.getTag(file, 'GPSLatitude');
     let longt = EXIF.getTag(file, 'GPSLongitude');
     lat = lat[0].numerator + lat[1].numerator /
@@ -27,6 +34,20 @@ function getLocaiton(file) {
         (60 * longt[1].denominator) + longt[2].numerator / (3600 * longt[2].denominator);
     return {
         latitude: lat,
-        longitude: longt
+        longitude: longt,
+        fileName: fileName
+    }
+}
+
+function uploadImage(image) {
+    $.ajax({
+        method: "POST",
+        url: kinveyBaseUrl + "appdata/" + kinveyAppKey + "/pictures",
+        headers: getSampleUserAuthHeaders(),
+        data: image
+    }).then(imageUploadSuccess).catch(handleAjaxError);
+
+    function imageUploadSuccess(data) {
+        alertify.success("Picture upload success")
     }
 }
