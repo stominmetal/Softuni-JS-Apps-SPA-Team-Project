@@ -1,0 +1,26 @@
+#homeMap {
+    height: 550px;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 2px;
+    box-shadow: 0 3px 14px rgba(25, 25, 25, 1);
+    background-color: rgba(0, 0, 0, 0.10);
+}
+
+#materialbox-overlay {
+    background-color: transparent;
+}
+
+img.materialboxed.initialized {
+    width: 100%;
+}
+
+
+.leaflet-container a.leaflet-popup-close-button{
+    color: black;
+}
+
+.leaflet-container a.leaflet-popup-close-button:hover{
+    color: darkred;
+}
