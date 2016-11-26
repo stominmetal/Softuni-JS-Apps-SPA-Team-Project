@@ -12,11 +12,6 @@
     background-color: transparent;
 }
 
-img.materialboxed.initialized {
-    width: 100%;
-}
-
-
 .leaflet-container a.leaflet-popup-close-button{
     color: black;
 }

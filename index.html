@@ -3,21 +3,23 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-    <title>SPA Project</title>
+    <title>Single Page App</title>
+    <link href="styles/images/favicon.ico" rel="icon" type="image/x-icon"/>
+
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="styles/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="styles/leaflet.css" rel="stylesheet"/>
-    <link href="styles/style.css" rel="stylesheet"/>
-    <link href="styles/map.css" rel="stylesheet">
     <link href="styles/alertify.min.css" rel="stylesheet"/>
+    <link href="styles/map.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet"/>
 </head>
 <body>
 <nav class="teal" role="navigation">
     <div class="nav-wrapper container">
-        <a id="logo-container" href="/" class="brand-logo">SPA Project</a>
+        <a id="logo-container" href="/" class="brand-logo">Single Page App</a>
         <ul class="right hide-on-med-and-down">
-            <li><a href="#" class="homeViewButton">Home</a></li>
+            <li class="active"><a href="#" class="homeViewButton">Home</a></li>
             <li><a href="#" class="galleryViewButton">Gallery</a></li>
             <li><a href="#" class="uploadViewButton">Upload</a></li>
             <li><a href="#" class="usersViewButton">Users</a></li>
@@ -39,6 +41,11 @@
 </nav>
 
 <main>
+
+    <div class="progress" style="display: none">
+        <div class="indeterminate blue"></div>
+    </div>
+
     <section id="homeView">
         <div class="section no-pad">
             <div id="homeMap">
@@ -67,9 +74,9 @@
                 </div>
             </div>
 
-
             <div class="section">
-                <div class="images">
+                <h4 id="uploadedImagesText" style="display: none">Currently Uploaded Images</h4>
+                <div class="uploadedImages">
 
                 </div>
             </div>
@@ -131,7 +138,6 @@
 
 
 <!--Libraries-->
-<script src="https://da189i1jfloii.cloudfront.net/js/kinvey-html5-sdk-3.3.0.min.js"></script>
 <script src="scripts/libs/jquery-3.1.1.min.js"></script>
 <script src="scripts/libs/materialize.min.js"></script>
 <script src="scripts/libs/leaflet.js"></script>

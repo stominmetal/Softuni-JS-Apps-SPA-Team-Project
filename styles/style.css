@@ -16,3 +16,15 @@ main {
 main > section {
      display: none;
  }
+
+img.materialboxed.initialized {
+    width: 70%;
+}
+
+.input-field {
+    margin-top: 2rem;
+}
+
+.progress {
+    margin: 0;
+}

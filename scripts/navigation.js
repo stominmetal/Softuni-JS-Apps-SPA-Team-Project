@@ -9,5 +9,7 @@ function showUploadView() {
 
 function showView(view) {
     $('main > section').hide();
+    $('.active').removeAttr("class")
     $(`#${view}`).show();
+    $(`.${view}Button`).parent().addClass("active");
 }
