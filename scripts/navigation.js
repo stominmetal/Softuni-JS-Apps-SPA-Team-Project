@@ -8,6 +8,14 @@ function showUploadView() {
     showView("uploadView");
 }
 
+function showRegisterView() {
+    showView("registerView");
+}
+
+function showLoginView() {
+    showView("loginView");
+}
+
 function showView(view) {
     $('main > section').hide();
     $(`#${view}`).show();
