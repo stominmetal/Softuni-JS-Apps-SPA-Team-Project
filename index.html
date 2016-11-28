@@ -92,6 +92,7 @@
     <section id="loginView">
         <div class="container">
             <br>
+            <h3 class="center">Login</h3>
             <br>
             <div class="row">
                 <form class="col s12 m8 l8 z-depth-1 offset-m2 offset-l2">
@@ -130,8 +131,44 @@
 
     <section id="registerView">
         <div class="container">
+            <br>
+            <h3 class="center">Register</h3>
+            <br>
             <div class="row">
-                Register Here
+                <form class="col s12 m8 l8 z-depth-1 offset-m2 offset-l2">
+                    <br>
+                    <div class="row">
+                        <div class="input-field col s10 offset-s1 offset-m1 offset-l1">
+                            <input id="user-register" type="text" class="validate">
+                            <label for="user-register">User</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s10 offset-s1 offset-m1 offset-l1">
+                            <input id="email-register" type="email" class="validate">
+                            <label for="email-register">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s10 offset-s1 offset-m1 offset-l1">
+                            <input id="password-register" type="password" class="validate">
+                            <label for="password-register">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s10 offset-s1 offset-m1 offset-l1">
+                            <input id="confirm-password-register" type="password" class="validate">
+                            <label for="confirm-password-register">Confirm Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="center">
+                            <button id="registerButton" onclick="return false"
+                                    class="btn waves-effect waves-light teal z-depth-1 blue-grey">Log In
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
