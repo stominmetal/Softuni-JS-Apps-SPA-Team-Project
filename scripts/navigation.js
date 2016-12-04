@@ -10,7 +10,6 @@ function showUploadView() {
 
 function showRegisterView() {
     showView("registerView");
-    
 }
 
 function showLoginView() {
