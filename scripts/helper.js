@@ -26,6 +26,22 @@ function handleAjaxError(err) {
     showErrorAlert("AJAX Error!")
 }
 
+function showHideMenuLinks() {
+    $("nav ul li a").hide();
+    if (sessionStorage.getItem("authToken")) {
+        $(".homeViewButton").show();
+        $(".galleryViewButton").show();
+        $(".uploadViewButton").show();
+        $(".usersViewButton").show();
+        $(".logoutButton").show();
+    } else {
+        $(".homeViewButton").show();
+        $(".loginViewButton").show();
+        $(".registerViewButton").show();
+        $('.loggedInUser').text("");
+    }
+}
+
 $(document).on({
     ajaxStart: function () {
         $(".progress").show()

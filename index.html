@@ -25,7 +25,8 @@
             <li><a href="#" class="usersViewButton">Users</a></li>
             <li><a href="#" class="loginViewButton">Login</a></li>
             <li><a href="#" class="registerViewButton">Register</a></li>
-            <li><a href="#" class="logoutButton">Log out</a></li>
+            <li><a href="#" class="logoutButton" onclick="logoutUser()">Log out</a></li>
+            <li><div class="loggedInUser"></div></li>
         </ul>
         <ul id="nav-mobile" class="side-nav">
             <li><a href="#" class="homeViewButton">Home</a></li>
@@ -34,7 +35,8 @@
             <li><a href="#" class="usersViewButton">Users</a></li>
             <li><a href="#" class="loginViewButton">Login</a></li>
             <li><a href="#" class="registerViewButton">Register</a></li>
-            <li><a href="#" class="logoutButton">Log out</a></li>
+            <li><a href="#" class="logoutButton" onclick="logoutUser()">Log out</a></li>
+            <li><div class="loggedInUser"></div></li>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -130,7 +132,6 @@
     </section>
 
     <section id="registerView">
-        <script src="scripts/register.js"></script>
         <div class="container">
             <br>
             <h3 class="center">Register</h3>
@@ -227,6 +228,8 @@
 <script src="scripts/upload.js"></script>
 
 <!--Add your scripts ABOVE bindEvents.js-->
+<script src="scripts/register.js"></script>
+<script src="scripts/logout.js"></script>
 <script src="scripts/bindEvents.js"></script>
 </body>
 </html>
