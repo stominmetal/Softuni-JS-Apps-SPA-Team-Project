@@ -13,6 +13,7 @@
     <link href="styles/alertify.min.css" rel="stylesheet"/>
     <link href="styles/map.css" rel="stylesheet">
     <link href="styles/style.css" rel="stylesheet"/>
+    <script src="scripts/gallery.js"></script>
 </head>
 <body>
 <nav class="blue darken-1" role="navigation">
@@ -58,7 +59,12 @@
 
     <section id="galleryView">
         <div class="container">
-            Add your view's HTML here
+            <div class="section">
+                <h3 id="galleryImagesHeading" style="display: none">Gallery Images</h3>
+                <div id="galleryImagesContainer">
+
+                </div>
+            </div>
         </div>
     </section>
 
@@ -87,14 +93,18 @@
 
     <section id="usersView">
         <div class="container">
-            Add your view's HTML here
+            "Ще има усери"
         </div>
     </section>
 
     <section id="loginView">
         <div class="container">
             <br>
+<<<<<<< HEAD
             <h3 class="center">Log in</h3>
+=======
+            <h3 class="center">Login</h3>
+>>>>>>> biskazz/master
             <br>
             <div class="row">
                 <form class="col s12 m8 l8 z-depth-1 offset-m2 offset-l2">
@@ -165,8 +175,13 @@
                     </div>
                     <div class="row">
                         <div class="center">
+<<<<<<< HEAD
                             <button id="registerButton" onclick="registerUser()"
                                     class="btn waves-effect waves-light teal z-depth-1 blue-grey">Register
+=======
+                            <button id="registerButton" onclick="return false"
+                                    class="btn waves-effect waves-light teal z-depth-1 blue-grey">Log In
+>>>>>>> biskazz/master
                             </button>
                         </div>
                     </div>
@@ -226,6 +241,9 @@
 <script src="scripts/map.js"></script>
 <script src="scripts/home.js"></script>
 <script src="scripts/upload.js"></script>
+<scipt src="scripts/gallery.js"></scipt>
+
+
 
 <!--Add your scripts ABOVE bindEvents.js-->
 <script src="scripts/register.js"></script>
