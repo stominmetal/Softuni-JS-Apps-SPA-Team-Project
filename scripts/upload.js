@@ -19,8 +19,6 @@ function resizeImageAndGetMetadata(file) {
             (60 * lat[1].denominator) + lat[2].numerator / (3600 * lat[2].denominator);
         longt = longt[0].numerator + longt[1].numerator /
             (60 * longt[1].denominator) + longt[2].numerator / (3600 * longt[2].denominator);
-        console.log(lat)
-        console.log(longt)
         let metadata = {
             latitude: lat,
             longitude: longt,
@@ -52,7 +50,7 @@ function uploadImage(image) {
     $.ajax({
         method: "POST",
         url: kinveyBaseUrl + "appdata/" + kinveyAppKey + "/pictures",
-        headers: getSampleUserAuthHeaders(),
+        headers: getKinveyUserAuthHeaders(),
         data: image
     }).then(imageUploadSuccess).catch(handleAjaxError);
 
@@ -67,19 +65,32 @@ function getUploadedImages(data) {
     $.ajax({
         method: "GET",
         url: kinveyBaseUrl + "appdata/" + kinveyAppKey + "/pictures/" + data._id,
-        headers: getSampleUserAuthHeaders()
+        headers: getKinveyUserAuthHeaders()
     }).then(visualizeUploadedImages).catch(handleAjaxError);
 
     /*Displays requested images*/
     function visualizeUploadedImages(data) {
         $("#uploadedImagesText").show();
-        $(".section .uploadedImages").prepend(`
-            <p>File Name: ${data.fileName}</p>
+        let descrButton = $(`<a style="margin-bottom: 15px;" class="waves-effect waves-light btn setDescriptionButton" data-id="${data._id}">Add Description</a>`).click(function () {
+            setDescription(data, this)
+        });
+        
+        let entryToDisplay = $(`
+         <div>
+            <p id="gosho">${data.fileName}</p>
             <div style="width: 70%">
              <img style="border-radius: 2px;" class="materialboxed responsive-img z-depth-1" src="${data.image}">
              </div>
-             <div class="divider"></div>`
-        );
+            <div style="width: 70%" class="input-field col s12">
+                <textarea class="materialize-textarea"></textarea>
+                <label>Description</label>
+            </div>
+         </div>`);
+
+        entryToDisplay.append(descrButton).append(`<div class="divider"></div>`);
+
+        $(".section .uploadedImages").prepend(entryToDisplay);
+
         /*Makes images enlargeable when clicked*/
         $('.materialboxed').materialbox();
     }
