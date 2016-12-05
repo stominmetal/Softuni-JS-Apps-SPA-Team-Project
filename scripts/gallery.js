@@ -12,15 +12,23 @@ function loadImages() {
         $("#galleryImagesHeading").show();
         $("#galleryImagesContainer").empty();
         for (let image of imageDataGallery) {
+            let description;
+            if (image.description) {
+                description = image.description;
+            } else {
+                description = "*No Description Available";
+            }
+
             $(".section #galleryImagesContainer").prepend(`
-            <p>${image.fileName}</p>
-            <div style="width: 70%">
-             <img style="border-radius: 2px;" class="materialboxed responsive-img z-depth-1" src="${image.image}">
-             </div>
-             <blockquote style="width: 70%">
-                 This is an example quotation that uses the blockquote tag. asdddddg. asdddddg. asdddddg. asdddddg. asddddd g. asdddddg. asdddddg. asdddddg. asddddd
-            </blockquote>
-             <div class="divider"></div>`
+            <div>
+                <div style="width: 70%">
+                     <img style="border-radius: 2px;" class="materialboxed responsive-img z-depth-1" src="${image.image}">
+                 </div>
+                <blockquote style="width: 70%">
+                   ${description}
+                </blockquote>
+                 <div class="divider"></div>
+             </div>`
             );
             /*Makes images enlargeable when clicked*/
             $('.materialboxed').materialbox();

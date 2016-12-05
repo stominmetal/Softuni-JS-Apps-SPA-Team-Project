@@ -1,4 +1,9 @@
 function logoutUser() {
+<<<<<<< HEAD
+=======
+
+    /*VIJ SE KVO PRAISH WE STOQNE*/
+>>>>>>> biskazz/master
     $.ajax({
         method: "POST",
         url: kinveyBaseUrl + "appdata/" + kinveyAppKey + "/pictures/",
@@ -7,6 +12,11 @@ function logoutUser() {
         error: handleAjaxError
     });
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> biskazz/master
     function logoutSuccess() {
         sessionStorage.clear();
         showHomeView();
