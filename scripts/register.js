@@ -20,12 +20,3 @@ function registerUser() {
         showLoginView();
     }
 }
-
-function saveAuthInSession(userInfo) {
-    let userAuth = userInfo._kmd.authtoken;
-    sessionStorage.setItem('authToken', userAuth);
-    let userId = userInfo._id;
-    sessionStorage.setItem('userId', userId);
-    let username = userInfo.username;
-    showSuccessAlert("Welcome, " + username + "!")
-}

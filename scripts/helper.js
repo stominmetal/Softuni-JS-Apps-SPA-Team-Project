@@ -3,12 +3,6 @@ const kinveyBaseUrl = "https://baas.kinvey.com/";
 const kinveyAppKey = "kid_S1uGCNPzg";
 const kinveyAppSecret = "cd10e48c60494447bdc39005926a2b56";
 
-function getSampleUserAuthHeaders() {
-    return {
-        'Authorization': "Basic " + btoa("gosho:gosho"),
-    };
-}
-
 function getKinveyAppAuthHeaders() {
     return {
         'Authorization': "Basic " + btoa(kinveyAppKey + ":" + kinveyAppSecret),
@@ -44,17 +38,35 @@ function showHideMenuLinks() {
 
 $(document).on({
     ajaxStart: function () {
-        $(".progress").show()
+        $(".progress").show();
+        $(".logoutButton").click(() => {
+            return false
+        });
+
     },
     ajaxStop: function () {
-        $(".progress").hide()
+        $(".progress").hide();
+        $(".logoutButton").click(logoutUser);
     }
 });
+
+function isUserLoggedIn() {
+    return (sessionStorage.getItem("authToken"));
+}
 
 function showSuccessAlert(str) {
     alertify.success(str);
 }
 
-function showErrorAlert(str){
+function showErrorAlert(str) {
     alertify.error(str);
+}
+
+function saveAuthInSession(userInfo) {
+    let userAuth = userInfo._kmd.authtoken;
+    sessionStorage.setItem('authToken', userAuth);
+    let userId = userInfo._id;
+    sessionStorage.setItem('userId', userId);
+    let username = userInfo.username;
+    showSuccessAlert("Welcome, " + username + "!")
 }

@@ -3,7 +3,7 @@ function loadImagesOnMap() {
     $.ajax({
         method: "GET",
         url: `${kinveyBaseUrl}appdata/${kinveyAppKey}/pictures`,
-        headers: getSampleUserAuthHeaders()
+        headers: getKinveyUserAuthHeaders()
     }).then(addPhotoToMap).catch(handleAjaxError);
 
     /*Appends images to markers on map on precise location*/
