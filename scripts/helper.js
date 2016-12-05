@@ -23,7 +23,7 @@ function getKinveyUserAuthHeaders() {
 
 function handleAjaxError(err) {
     console.dir(err);
-    showErrorAlert("AJAX Error!")
+    showErrorAlert(err.statusText)
 }
 
 function showHideMenuLinks() {

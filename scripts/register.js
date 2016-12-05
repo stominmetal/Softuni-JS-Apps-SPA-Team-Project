@@ -18,16 +18,18 @@ function registerUser() {
             success: registerSuccess,
             error: handleAjaxError
         });
+<<<<<<< HEAD
         // console.log(userData)
     } else {
         showRegisterView();
         showErrorAlert("Passwords do not match")
+=======
+    } else {
+        showErrorAlert("Passwords didn't match!")
+>>>>>>> biskazz/master
     }
-
     function registerSuccess(userInfo) {
-        saveAuthInSession(userInfo);
-        showHomeView();
-        showHideMenuLinks();
+        showLoginView();
     }
 }
 
@@ -37,5 +39,5 @@ function saveAuthInSession(userInfo) {
     let userId = userInfo._id;
     sessionStorage.setItem('userId', userId);
     let username = userInfo.username;
-    $('.loggedInUser').text("Welcome, " + username + "!");
+    showSuccessAlert("Welcome, " + username + "!")
 }

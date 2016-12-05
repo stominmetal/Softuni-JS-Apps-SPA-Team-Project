@@ -27,6 +27,7 @@
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="419">
               <caret line="115" column="73" selection-start-line="115" selection-start-column="73" selection-end-line="115" selection-end-column="73" />
 =======
@@ -72,6 +73,10 @@
 <<<<<<< HEAD
             <state relative-caret-position="51">
               <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+=======
+            <state relative-caret-position="3336">
+              <caret line="237" column="27" lean-forward="false" selection-start-line="237" selection-start-column="21" selection-end-line="237" selection-end-column="27" />
+>>>>>>> biskazz/master
               <folding />
             </state>
           </provider>
@@ -100,8 +105,8 @@
       <file leaf-file-name="home.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="65" lean-forward="false" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+            <state relative-caret-position="150">
+              <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="11" selection-end-column="47" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
 >>>>>>> biskazz/master
@@ -110,6 +115,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="logout.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/logout.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -176,6 +182,8 @@
           </provider>
         </entry>
       </file>
+=======
+>>>>>>> biskazz/master
       <file leaf-file-name="navigation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/navigation.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -221,6 +229,18 @@
                 <marker date="1480938479000" expanded="true" signature="639:774" ph="..." />
                 <marker date="1480938479000" expanded="false" signature="666:685" ph="..." />
 >>>>>>> biskazz/master
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helper.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/helper.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="705">
+              <caret line="57" column="23" lean-forward="false" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="23" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -283,10 +303,18 @@
         <option value="$PROJECT_DIR$/scripts/bindEvents.js" />
         <option value="$PROJECT_DIR$/scripts/gallery.js" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> biskazz/master
 =======
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts/home.js" />
+>>>>>>> biskazz/master
+=======
+        <option value="$PROJECT_DIR$/scripts/home.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/scripts/login.js" />
+        <option value="$PROJECT_DIR$/scripts/helper.js" />
+        <option value="$PROJECT_DIR$/scripts/register.js" />
 >>>>>>> biskazz/master
       </list>
     </option>
@@ -415,12 +443,17 @@
       <updated>1480937851925</updated>
       <workItem from="1480937853138" duration="203000" />
       <workItem from="1480938102446" duration="139000" />
+<<<<<<< HEAD
       <workItem from="1480938259820" duration="1174000" />
+>>>>>>> biskazz/master
+=======
+      <workItem from="1480938259820" duration="2547000" />
 >>>>>>> biskazz/master
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     <option name="totallyTimeSpent" value="33964000" />
@@ -434,6 +467,9 @@
     <option name="totallyTimeSpent" value="34958000" />
 =======
     <option name="totallyTimeSpent" value="1516000" />
+>>>>>>> biskazz/master
+=======
+    <option name="totallyTimeSpent" value="2889000" />
 >>>>>>> biskazz/master
   </component>
   <component name="ToolWindowManager">
@@ -802,6 +838,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -851,6 +888,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/init.js" />
     <entry file="file://$PROJECT_DIR$/scripts/main.js" />
+=======
+>>>>>>> biskazz/master
     <entry file="file://$PROJECT_DIR$/scripts/map.js">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -969,6 +1008,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/bindEvents.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="44" lean-forward="false" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/gallery.js">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -987,8 +1034,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/bindEvents.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <state relative-caret-position="187">
@@ -999,6 +1047,52 @@
 =======
         <state relative-caret-position="150">
           <caret line="10" column="44" lean-forward="false" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+>>>>>>> biskazz/master
+=======
+        <state relative-caret-position="3336">
+          <caret line="237" column="27" lean-forward="false" selection-start-line="237" selection-start-column="21" selection-end-line="237" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/helper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="57" column="23" lean-forward="false" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="47" lean-forward="false" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/logout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 >>>>>>> biskazz/master
           <folding />
         </state>
@@ -1065,8 +1159,8 @@
     <entry file="file://$PROJECT_DIR$/scripts/home.js">
 >>>>>>> biskazz/master
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="65" lean-forward="false" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+        <state relative-caret-position="150">
+          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="11" selection-end-column="47" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

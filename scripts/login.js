@@ -1,8 +1,8 @@
 function loginUser() {
-        let userData = {
-            username: $('#user-login').val(),
-            password: $('#password-login').val()
-        };
+    let userData = {
+        username: $('#user-login').val(),
+        password: $('#password-login').val()
+    };
     $.ajax({
         method: "POST",
         url: kinveyBaseUrl + "user/" + kinveyAppKey + "/login",
