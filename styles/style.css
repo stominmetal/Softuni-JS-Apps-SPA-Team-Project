@@ -14,8 +14,8 @@ main {
 }
 
 main > section {
-     display: none;
- }
+    display: none;
+}
 
 img.materialboxed.initialized {
     width: 100%;
@@ -27,4 +27,8 @@ img.materialboxed.initialized {
 
 .progress {
     margin: 0;
+}
+
+.divider {
+    height: 3px;
 }
