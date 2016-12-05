@@ -7,10 +7,8 @@ function loginUser() {
         method: "POST",
         url: kinveyBaseUrl + "user/" + kinveyAppKey + "/login",
         headers: getKinveyAppAuthHeaders(),
-        data: userData,
-        success: loginSuccess,
-        error: loginError
-    });
+        data: userData
+    }).then(loginSuccess).catch(handleAjaxError)
 
     function loginSuccess(userInfo) {
         saveAuthInSession(userInfo);
@@ -18,7 +16,4 @@ function loginUser() {
         showHideMenuLinks();
     }
 
-    function loginError () {
-        showErrorAlert("Wrong username or password!");
-    }
 }
