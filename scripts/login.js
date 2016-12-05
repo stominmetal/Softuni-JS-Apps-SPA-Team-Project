@@ -9,16 +9,12 @@ function loginUser() {
         headers: getKinveyAppAuthHeaders(),
         data: userData,
         success: loginSuccess,
-        error: loginError
+        error: handleAjaxError
     });
 
     function loginSuccess(userInfo) {
         saveAuthInSession(userInfo);
         showHomeView();
         showHideMenuLinks();
-    }
-
-    function loginError () {
-        showErrorAlert("Wrong username or password!");
     }
 }

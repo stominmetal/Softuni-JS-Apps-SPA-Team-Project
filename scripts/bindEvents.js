@@ -11,5 +11,5 @@ $(document).ready(function () {
     $("#registerButton").click(registerUser);
     $("#uploadSlector").change(getFilesFromInput);
     $(".setDescriptionButton").click(showDescriptionView);
-    $("#homeMap").on('click', '.leaflet-marker-icon', makeImageOnMapResponsive);
+    $("#homeMap").on('click', '.leaflet-marker-icon', makeImageOnMapEnlargeable);
 });

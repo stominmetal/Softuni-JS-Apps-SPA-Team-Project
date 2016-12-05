@@ -1,21 +1,18 @@
 function logoutUser() {
-
-    /*VIJ SE KVO PRAISH WE STOQNE*/
     $.ajax({
         method: "POST",
-        url: kinveyBaseUrl + "appdata/" + kinveyAppKey + "/pictures/",
+        url: kinveyBaseUrl + "user/" + kinveyAppKey + "/_logout",
         headers: getKinveyUserAuthHeaders(),
-        success: logoutSuccess,
-        error: handleAjaxError
-    });
-
-
+    }).then(logoutSuccess).catch(handleAjaxError);
 
     function logoutSuccess() {
         sessionStorage.clear();
+        map.off();
+        map.remove();
+        $("#homeMap").empty();
+        initMap();
         showHomeView();
         showHideMenuLinks();
-        console.log("I am here");
         showSuccessAlert("Succesful logout!")
     }
 }

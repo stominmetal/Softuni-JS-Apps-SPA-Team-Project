@@ -89,7 +89,7 @@ function getUploadedImages(data) {
 
         entryToDisplay.append(descrButton).append(`<div class="divider"></div>`);
 
-        $(".section .uploadedImages").prepend(entryToDisplay);
+        $(".section #uploadedImages").prepend(entryToDisplay);
 
         /*Makes images enlargeable when clicked*/
         $('.materialboxed').materialbox();
