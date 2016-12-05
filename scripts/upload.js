@@ -47,6 +47,7 @@ function resizeImageAndGetMetadata(file) {
 }
 
 function uploadImage(image) {
+    image.description = "*No Description Available";
     $.ajax({
         method: "POST",
         url: kinveyBaseUrl + "appdata/" + kinveyAppKey + "/pictures",
@@ -71,19 +72,19 @@ function getUploadedImages(data) {
     /*Displays requested images*/
     function visualizeUploadedImages(data) {
         $("#uploadedImagesText").show();
-        let descrButton = $(`<a style="margin-bottom: 15px;" class="waves-effect waves-light btn setDescriptionButton" data-id="${data._id}">Set Description</a>`).click(function () {
+        let descrButton = $(`<a style="margin-bottom: 15px;" class="waves-effect waves-light btn setDescriptionButton">Set Description</a>`).click(function () {
             setDescription(data, this)
         });
 
         let entryToDisplay = $(`
          <div>
-            <p id="gosho">${data.fileName}</p>
+            <p>${data.fileName}</p>
             <div style="width: 70%">
                 <img style="border-radius: 2px;" class="materialboxed responsive-img z-depth-1" src="${data.image}">
             </div>
             <div style="width: 70%" class="input-field col s12">
                 <textarea class="materialize-textarea"></textarea>
-                <label>Description</label>
+                <label class="active">Description</label>
             </div>
          </div>`);
 

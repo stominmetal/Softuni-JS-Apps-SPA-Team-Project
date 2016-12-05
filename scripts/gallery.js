@@ -13,18 +13,12 @@ function loadImages() {
         $("#galleryImagesContainer").empty();
 
         for (let image of imageDataGallery) {
-            let description;
-            if (image.description) {
-                description = image.description;
-            } else {
-                description = "*No Description Available";
-            }
-
             let buttonsRow = $(`<div class="row"></div>`);
-            let descrButton = $(`<a style="margin-left: 15px" class="waves-effect waves-light yellow darken-3 btn setDescriptionButton" data-id="${image._id}">Edit</a>`).click(function () {
-
+            let descrButton = $(`<a style="margin-left: 15px" class="waves-effect waves-light yellow darken-3 btn">Edit</a>`).click(function () {
+                prepareDescriptionView(image);
+                showDescriptionView(image)
             });
-            let deleteButton = $(`<a style="margin-left: 15px" class="waves-effect waves-light red darken-3 btn setDescriptionButton" data-id="${image._id}">Delete</a>`).click(function () {
+            let deleteButton = $(`<a style="margin-left: 15px" class="waves-effect waves-light red darken-3 btn">Delete</a>`).click(function () {
 
             });
 
@@ -36,13 +30,13 @@ function loadImages() {
                      <img style="border-radius: 2px;" class="materialboxed responsive-img z-depth-1" src="${image.image}">
                  </div>
                 <blockquote style="width: 70%">
-                   ${description}
+                   ${image.description}
                 </blockquote>
                  
              </div>`);
 
             if(image._acl.creator == sessionStorage.getItem("userId")){
-                entryToDisplay.append(buttonsRow).append($(`<div class="divider"></div>`)).append($(`<div class="divider"></div>`));
+                entryToDisplay.append(buttonsRow).append($(`<div class="divider"></div>`));
             }else{
                 entryToDisplay.append($(`<div class="divider"></div>`));
             }
