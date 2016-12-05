@@ -8,11 +8,8 @@ function loadImagesOnMap() {
 
     /*Appends images to markers on map on precise location*/
     function addPhotoToMap(images) {
-<<<<<<< HEAD
-=======
         let markerIcon = new L.Icon.Default();
         markerIcon.options.shadowSize = [0, 0];
->>>>>>> biskazz/master
         for (let image of images) {
             let imageUrl = image.image;
             let imageLat = image.latitude;
