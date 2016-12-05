@@ -26,8 +26,10 @@
             <li><a href="#" class="usersViewButton">Users</a></li>
             <li><a href="#" class="loginViewButton">Login</a></li>
             <li><a href="#" class="registerViewButton">Register</a></li>
-            <li><a href="#" class="logoutButton" onclick="logoutUser()">Log out</a></li>
-            <li><div class="loggedInUser"></div></li>
+            <li><a href="#" class="logoutButton">Log out</a></li>
+            <li>
+                <div class="loggedInUser"></div>
+            </li>
         </ul>
         <ul id="nav-mobile" class="side-nav">
             <li><a href="#" class="homeViewButton">Home</a></li>
@@ -36,8 +38,10 @@
             <li><a href="#" class="usersViewButton">Users</a></li>
             <li><a href="#" class="loginViewButton">Login</a></li>
             <li><a href="#" class="registerViewButton">Register</a></li>
-            <li><a href="#" class="logoutButton" onclick="logoutUser()">Log out</a></li>
-            <li><div class="loggedInUser"></div></li>
+            <li><a href="#" class="logoutButton">Log out</a></li>
+            <li>
+                <div class="loggedInUser"></div>
+            </li>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -60,7 +64,7 @@
     <section id="galleryView">
         <div class="container">
             <div class="section">
-                <h3 id="galleryImagesHeading" style="display: none">Gallery Images</h3>
+                <h4 id="galleryImagesHeading" style="display: none">Gallery Images</h4>
                 <div id="galleryImagesContainer">
 
                 </div>
@@ -71,6 +75,7 @@
     <section id="uploadView">
         <div class="container">
             <div class="row">
+                <h4 id="uploadedImagesHeading">Upload Images</h4>
                 <div class="file-field input-field">
                     <div class="btn blue-grey">
                         <span>Select</span>
@@ -119,8 +124,8 @@
                     </div>
                     <div class="row">
                         <div class="center">
-                            <button id="loginButton" onclick="loginUser()"
-                                    class="btn waves-effect waves-light teal z-depth-1 blue-grey">Log In
+                            <button id="loginButton" class="btn waves-effect waves-light teal z-depth-1 blue-grey">
+                                Log In
                             </button>
                         </div>
                     </div>
@@ -163,8 +168,8 @@
                     </div>
                     <div class="row">
                         <div class="center">
-                            <button id="registerButton" onclick="registerUser()"
-                                    class="btn waves-effect waves-light teal z-depth-1 blue-grey">Register
+                            <button id="registerButton" class="btn waves-effect waves-light teal z-depth-1 blue-grey">
+                                Register
                             </button>
                         </div>
                     </div>
@@ -193,7 +198,8 @@
             <div class="col l4 s12">
                 <h5 class="white-text">Github</h5>
                 <ul>
-                    <li><a class="white-text" href="https://github.com/biskazz/Softuni-JS-Apps-SPA-Team-Project">Softuni JS Apps SPA Team Project</a></li>
+                    <li><a class="white-text" href="https://github.com/biskazz/Softuni-JS-Apps-SPA-Team-Project">Softuni
+                        JS Apps SPA Team Project</a></li>
                 </ul>
             </div>
         </div>
@@ -224,7 +230,6 @@
 <script src="scripts/home.js"></script>
 <script src="scripts/upload.js"></script>
 <script src="scripts/gallery.js"></script>
-
 
 
 <!--Add your scripts ABOVE bindEvents.js-->

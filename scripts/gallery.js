@@ -7,12 +7,10 @@ function loadImages() {
         headers: getSampleUserAuthHeaders()
     }).then(visualizeUploadedImages).catch(handleAjaxError);
 
-
-    //TODO Empty before load
-
     /*Displays requested images*/
     function visualizeUploadedImages(imageDataGallery) {
         $("#galleryImagesHeading").show();
+        $("#galleryImagesContainer").empty();
         for (let image of imageDataGallery) {
             $(".section #galleryImagesContainer").prepend(`
             <p>File Name: ${image.fileName}</p>

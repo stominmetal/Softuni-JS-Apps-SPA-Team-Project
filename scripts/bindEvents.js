@@ -6,6 +6,9 @@ $(document).ready(function () {
     $(".usersViewButton").click(showUsersView);
     $(".registerViewButton").click(showRegisterView);
     $(".loginViewButton").click(showLoginView);
+    $(".logoutButton").click(logoutUser);
+    $("#loginButton").click(loginUser);
+    $("#registerButton").click(registerUser)
     $("#uploadSlector").change(getFilesFromInput);
     $("#homeMap").on('click', '.leaflet-marker-icon', makeImageOnMapResponsive);
 });
