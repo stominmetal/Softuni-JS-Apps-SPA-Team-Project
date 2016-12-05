@@ -1,4 +1,6 @@
 function logoutUser() {
+
+    /*VIJ SE KVO PRAISH WE STOQNE*/
     $.ajax({
         method: "POST",
         url: kinveyBaseUrl + "appdata/" + kinveyAppKey + "/pictures/",
@@ -6,6 +8,8 @@ function logoutUser() {
         success: logoutSuccess,
         error: handleAjaxError
     });
+
+
 
     function logoutSuccess() {
         sessionStorage.clear();

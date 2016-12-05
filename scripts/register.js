@@ -40,7 +40,7 @@ function registerUser() {
         showLoginView();
     }
 }
-<<<<<<< HEAD
+
 
 function saveAuthInSession(userInfo) {
     let userAuth = userInfo._kmd.authtoken;
@@ -50,5 +50,3 @@ function saveAuthInSession(userInfo) {
     let username = userInfo.username;
     showSuccessAlert("Welcome, " + username + "!");
 }
-=======
->>>>>>> biskazz/master
