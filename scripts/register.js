@@ -3,6 +3,8 @@ function registerUser() {
     let passConfirm = $('#confirm-password-register').val();
     let user = $('#user-register').val();
     let email = $('#email-register').val();
+    let file = $('#uploadLogoSlector').prop('files')[0];
+
 
     let valid = true;
 
@@ -30,20 +32,28 @@ function registerUser() {
     }
 
     if (valid) {
-        let userData = {
-            username: user,
-            email: email,
-            password: pass
-        };
-        $.ajax({
-            method: "POST",
-            url: kinveyBaseUrl + "user/" + kinveyAppKey + "/",
-            headers: getKinveyAppAuthHeaders(),
-            data: userData,
-        }).then(registerSuccess).catch(handleAjaxError);
-    }
+        resize.photo(file, 300, 'dataURL', function (resizedImage) {
+            let userData = {
+                username: user,
+                email: email,
+                password: pass,
+                picture: resizedImage
+            };
+            sendRegisterRequest(userData);
+        });
 
-    function registerSuccess(userInfo) {
-        showLoginView();
+        function sendRegisterRequest(data) {
+            $.ajax({
+                method: "POST",
+                url: kinveyBaseUrl + "user/" + kinveyAppKey + "/",
+                headers: getKinveyAppAuthHeaders(),
+                data: data,
+            }).then(registerSuccess).catch(handleAjaxError);
+
+            function registerSuccess(userInfo) {
+                showLoginView();
+                showSuccessAlert("Register Success!")
+            }
+        }
     }
 }

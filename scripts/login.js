@@ -7,23 +7,12 @@ function loginUser() {
         method: "POST",
         url: kinveyBaseUrl + "user/" + kinveyAppKey + "/login",
         headers: getKinveyAppAuthHeaders(),
-<<<<<<< HEAD
         data: userData
-    }).then(loginSuccess).catch(handleAjaxError)
-=======
-        data: userData,
-        success: loginSuccess,
-        error: handleAjaxError
-    });
->>>>>>> biskazz/master
+    }).then(loginSuccess).catch(handleAjaxError);
 
     function loginSuccess(userInfo) {
         saveAuthInSession(userInfo);
         showHomeView();
         showHideMenuLinks();
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> biskazz/master
 }

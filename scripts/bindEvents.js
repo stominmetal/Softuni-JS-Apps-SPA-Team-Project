@@ -10,7 +10,6 @@ $(document).ready(function () {
     $("#loginButton").click(loginUser);
     $("#registerButton").click(registerUser);
     $("#uploadSlector").change(getFilesFromInput);
-    $("#uploadLogoSlector").change(getFilesFromRegisterInput);
     $(".setDescriptionButton").click(showDescriptionView);
     $("#homeMap").on('click', '.leaflet-marker-icon', makeImageOnMapEnlargeable);
 });
