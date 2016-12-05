@@ -12,6 +12,8 @@ $(document).ready(function () {
         }
     );
     /*Show home view*/
+
+    showHideMenuLinks();
     showHomeView();
     initMap();
 });

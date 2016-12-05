@@ -26,7 +26,8 @@
             <li><a href="#" class="usersViewButton">Users</a></li>
             <li><a href="#" class="loginViewButton">Login</a></li>
             <li><a href="#" class="registerViewButton">Register</a></li>
-            <li><a href="#" class="logoutButton">Log out</a></li>
+            <li><a href="#" class="logoutButton" onclick="logoutUser()">Log out</a></li>
+            <li><div class="loggedInUser"></div></li>
         </ul>
         <ul id="nav-mobile" class="side-nav">
             <li><a href="#" class="homeViewButton">Home</a></li>
@@ -35,7 +36,8 @@
             <li><a href="#" class="usersViewButton">Users</a></li>
             <li><a href="#" class="loginViewButton">Login</a></li>
             <li><a href="#" class="registerViewButton">Register</a></li>
-            <li><a href="#" class="logoutButton">Log out</a></li>
+            <li><a href="#" class="logoutButton" onclick="logoutUser()">Log out</a></li>
+            <li><div class="loggedInUser"></div></li>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -98,7 +100,7 @@
     <section id="loginView">
         <div class="container">
             <br>
-            <h3 class="center">Login</h3>
+            <h3 class="center">Log in</h3>
             <br>
             <div class="row">
                 <form class="col s12 m8 l8 z-depth-1 offset-m2 offset-l2">
@@ -117,18 +119,10 @@
                     </div>
                     <div class="row">
                         <div class="center">
-                            <button id="loginButton" onclick="return false"
+                            <button id="loginButton" onclick="loginUser()"
                                     class="btn waves-effect waves-light teal z-depth-1 blue-grey">Log In
                             </button>
                         </div>
-                    </div>
-                    <div class="row">
-                        <p class="center-align">Not registered?
-                            <br>
-
-                            <br>
-                            <a href="#" class="registerViewButton">Register</a>
-                        </p>
                     </div>
                 </form>
             </div>
@@ -169,8 +163,8 @@
                     </div>
                     <div class="row">
                         <div class="center">
-                            <button id="registerButton" onclick="return false"
-                                    class="btn waves-effect waves-light teal z-depth-1 blue-grey">Log In
+                            <button id="registerButton" onclick="registerUser()"
+                                    class="btn waves-effect waves-light teal z-depth-1 blue-grey">Register
                             </button>
                         </div>
                     </div>
@@ -200,7 +194,6 @@
                 <h5 class="white-text">Github</h5>
                 <ul>
                     <li><a class="white-text" href="https://github.com/biskazz/Softuni-JS-Apps-SPA-Team-Project">Softuni JS Apps SPA Team Project</a></li>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -230,11 +223,14 @@
 <script src="scripts/map.js"></script>
 <script src="scripts/home.js"></script>
 <script src="scripts/upload.js"></script>
-<scipt src="scripts/gallery.js"></scipt>
+<script src="scripts/gallery.js"></script>
 
 
 
 <!--Add your scripts ABOVE bindEvents.js-->
+<script src="scripts/register.js"></script>
+<script src="scripts/login.js"></script>
+<script src="scripts/logout.js"></script>
 <script src="scripts/bindEvents.js"></script>
 </body>
 </html>

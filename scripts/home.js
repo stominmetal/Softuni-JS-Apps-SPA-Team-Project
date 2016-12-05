@@ -7,7 +7,7 @@ function loadImagesOnMap() {
     }).then(addPhotoToMap).catch(handleAjaxError);
     /*Appends images to markers on map on precise location*/
     function addPhotoToMap(images) {
-            for (let image of images) {
+        for (let image of images) {
             let imageUrl = image.image;
             let imageLat = image.latitude;
             let imageLong = image.longitude;
