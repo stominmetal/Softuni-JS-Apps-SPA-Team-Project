@@ -1,9 +1,14 @@
 function registerUser() {
-    if ($('#password-register').val() == $('#confirm-password-register').val()) {
+    let pass = $('#password-register').val();
+    let passConfirm = $('#confirm-password-register').val();
+    let user = $('#user-register').val();
+    let email = $('#email-register').val();
+
+    if (pass == passConfirm) {
         let userData = {
-            username: $('#user-register').val(),
-            email: $('#email-register').val(),
-            password: $('#password-register').val()
+            username: user,
+            email: email,
+            password: pass
         };
         $.ajax({
             method: "POST",
@@ -14,6 +19,9 @@ function registerUser() {
             error: handleAjaxError
         });
         // console.log(userData)
+    } else {
+        showRegisterView();
+        showErrorAlert("Passwords do not match")
     }
 
     function registerSuccess(userInfo) {
