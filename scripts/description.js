@@ -16,7 +16,6 @@ function setDescription(data, button) {
         $(button).parent().find(".descriptionContainer").remove();
         $(button).parent().find("img").after(`
             <div class="descriptionContainer">
-             <h6>Description</h6>
              <blockquote style="width: 70%">${response.description}</blockquote>
             </div> `);
         showSuccessAlert("Added Description!");
