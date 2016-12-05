@@ -29,7 +29,7 @@ function initMap() {
     map.setMaxBounds([[90, -180], [-90, 180]]);
 }
 
-function makeImageOnMapResponsive() {
+function makeImageOnMapEnlargeable() {
     /*Added some delay to ensure stability*/
     setTimeout(function () {
         $('.materialboxed').materialbox();

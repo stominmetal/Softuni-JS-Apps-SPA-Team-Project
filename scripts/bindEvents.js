@@ -12,5 +12,5 @@ $(document).ready(function () {
     $("#uploadSlector").change(getFilesFromInput);
     $("#uploadLogoSlector").change(getFilesFromRegisterInput);
     $(".setDescriptionButton").click(showDescriptionView);
-    $("#homeMap").on('click', '.leaflet-marker-icon', makeImageOnMapResponsive);
+    $("#homeMap").on('click', '.leaflet-marker-icon', makeImageOnMapEnlargeable);
 });

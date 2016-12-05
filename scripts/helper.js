@@ -39,14 +39,9 @@ function showHideMenuLinks() {
 $(document).on({
     ajaxStart: function () {
         $(".progress").show();
-        $(".logoutButton").click(() => {
-            return false
-        });
-
     },
     ajaxStop: function () {
         $(".progress").hide();
-        $(".logoutButton").click(logoutUser);
     }
 });
 
