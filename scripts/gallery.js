@@ -16,7 +16,8 @@ function loadImages() {
             let buttonsRow = $(`<div class="row"></div>`);
             let descrButton = $(`<a style="margin-left: 15px" class="waves-effect waves-light yellow darken-3 btn">Edit</a>`).click(function () {
                 prepareDescriptionView(image);
-                showDescriptionView(image)
+                prepareDelete(image);
+                showDescriptionView()
             });
             let deleteButton = $(`<a style="margin-left: 15px" class="waves-effect waves-light red darken-3 btn">Delete</a>`).click(function () {
 
