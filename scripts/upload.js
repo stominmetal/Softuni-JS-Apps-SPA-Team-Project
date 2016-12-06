@@ -15,34 +15,36 @@ function resizeImageAndGetMetadata(file) {
         let lat = EXIF.getTag(file, 'GPSLatitude');
         let longt = EXIF.getTag(file, 'GPSLongitude');
 
-        lat = lat[0].numerator + lat[1].numerator /
-            (60 * lat[1].denominator) + lat[2].numerator / (3600 * lat[2].denominator);
-        longt = longt[0].numerator + longt[1].numerator /
-            (60 * longt[1].denominator) + longt[2].numerator / (3600 * longt[2].denominator);
-        let metadata = {
-            latitude: lat,
-            longitude: longt,
-            fileName: file.name
-        };
+        if (lat && longt) {
 
-        /*Resize image (500px is small but that's what kinvey allows to upload as base64)*/
-        resize.photo(file, 500, 'dataURL', function (resizedImage) {
-            let objectToUpload = {
-                image: resizedImage,
-                latitude: metadata.latitude,
-                longitude: metadata.longitude,
-                fileName: metadata.fileName
+            lat = lat[0].numerator + lat[1].numerator /
+                (60 * lat[1].denominator) + lat[2].numerator / (3600 * lat[2].denominator);
+            longt = longt[0].numerator + longt[1].numerator /
+                (60 * longt[1].denominator) + longt[2].numerator / (3600 * longt[2].denominator);
+            let metadata = {
+                latitude: lat,
+                longitude: longt,
+                fileName: file.name
             };
+            /*Resize image (500px is small but that's what kinvey allows to upload as base64)*/
+            resize.photo(file, 500, 'dataURL', function (resizedImage) {
+                let objectToUpload = {
+                    image: resizedImage,
+                    latitude: metadata.latitude,
+                    longitude: metadata.longitude,
+                    fileName: metadata.fileName
+                };
 
-            /*After both actions are completed - start upload of current image*/
-            if (file.name.split(".")[1].toUpperCase() != "JPG" && file.name.split(".")[1].toUpperCase() != "JPEG") {
-                showErrorAlert("Invalid Image")
-            } else if (!objectToUpload.latitude || !objectToUpload.longitude) {
-                showErrorAlert("Image doesn't contain GPS data")
-            } else {
-                uploadImage(objectToUpload);
-            }
-        });
+                /*After both actions are completed - start upload of current image*/
+                if (file.name.split(".")[1].toUpperCase() != "JPG" && file.name.split(".")[1].toUpperCase() != "JPEG") {
+                    showErrorAlert("Invalid Image")
+                } else {
+                    uploadImage(objectToUpload);
+                }
+            });
+        } else {
+            showErrorAlert("Image doesn't contain GPS data")
+        }
     });
 }
 
