@@ -18,19 +18,21 @@ function loadImages() {
                 prepareDescriptionView(image);
                 showDescriptionView(image)
             });
+
             let deleteButton = $(`<a style="margin-left: 15px" class="waves-effect waves-light red darken-3 btn">Delete</a>`).click(function () {
 
             });
 
             buttonsRow.append(descrButton);
             buttonsRow.append(deleteButton);
+
             let entryToDisplay = $(`
             <div>
                 <div style="width: 70%">
                      <img style="border-radius: 2px;" class="materialboxed responsive-img z-depth-1" src="${image.image}">
                  </div>
                 <blockquote style="width: 70%">
-                   ${image.description}
+                   ${escape(image.description)}
                 </blockquote>
                  
              </div>`);
