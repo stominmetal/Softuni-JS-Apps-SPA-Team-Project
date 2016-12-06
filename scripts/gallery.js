@@ -16,10 +16,16 @@ function loadImages() {
             let buttonsRow = $(`<div class="row"></div>`);
             let descrButton = $(`<a style="margin-left: 15px" class="waves-effect waves-light yellow darken-3 btn">Edit</a>`).click(function () {
                 prepareDescriptionView(image);
-                showDescriptionView(image)
+                showDescriptionView()
             });
 
             let deleteButton = $(`<a style="margin-left: 15px" class="waves-effect waves-light red darken-3 btn">Delete</a>`).click(function () {
+                alertify.confirm('Delete Image', 'Are you sure?', function () {
+                        deleteImages(image)
+                    }
+                    , function () {
+                        alertify.error('Cancel')
+                    });
 
             });
 
@@ -37,9 +43,9 @@ function loadImages() {
                  
              </div>`);
 
-            if(image._acl.creator == sessionStorage.getItem("userId")){
+            if (image._acl.creator == sessionStorage.getItem("userId")) {
                 entryToDisplay.append(buttonsRow).append($(`<div class="divider"></div>`));
-            }else{
+            } else {
                 entryToDisplay.append($(`<div class="divider"></div>`));
             }
 
@@ -47,6 +53,21 @@ function loadImages() {
 
             /*Makes images enlargeable when clicked*/
             $('.materialboxed').materialbox();
+        }
+    }
+
+    function deleteImages(data) {
+        console.log(data._id)
+        $.ajax({
+            method: "DELETE",
+            url: kinveyBaseUrl + "appdata/" + kinveyAppKey + "/pictures/" + data._id,
+            headers: getKinveyUserAuthHeaders()
+        }).then(deleteSuccess).catch(handleAjaxError);
+
+        function deleteSuccess () {
+            showSuccessAlert("Successful delete!")
+            showGalleryView();
+            loadImages();
         }
     }
 }
