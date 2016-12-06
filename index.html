@@ -95,7 +95,16 @@
         <div class="container">
             <h4>Edit Description</h4>
             <div id="editContainer">
-
+                <div>
+                    <p id="editPictureName">${data.fileName}</p>
+                    <div style="width: 70%">
+                        <img id="editPicture" style="border-radius: 2px;" class="materialboxed responsive-img z-depth-1" src="">
+                    </div>
+                    <div style="width: 70%" class="input-field col s12">
+                        <textarea id="editedDescription" class="materialize-textarea">${data.description}</textarea>
+                        <label class="active">Description</label>
+                    </div>
+                </div>`
             </div>
         </div>
     </section>

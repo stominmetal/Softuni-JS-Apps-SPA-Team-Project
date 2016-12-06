@@ -72,6 +72,7 @@ function getUploadedImages(data) {
     /*Displays requested images*/
     function visualizeUploadedImages(data) {
         $("#uploadedImagesText").show();
+
         let descrButton = $(`<a style="margin-bottom: 15px;" class="waves-effect waves-light btn setDescriptionButton">Set Description</a>`).click(function () {
             setDescription(data, this)
         });

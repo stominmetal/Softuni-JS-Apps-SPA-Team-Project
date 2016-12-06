@@ -65,3 +65,17 @@ function saveAuthInSession(userInfo) {
     let username = userInfo.username;
     showSuccessAlert("Welcome, " + username + "!")
 }
+
+function escape(string) {
+    let entityMap = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': '&quot;',
+        "'": '&#39;',
+        "/": '&#x2F;'
+    };
+    return String(string).replace(/[&<>"'\/]/g, function (s) {
+        return entityMap[s];
+    });
+}
