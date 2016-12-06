@@ -31,10 +31,7 @@ function showLoginView() {
 }
 
 function showDescriptionView() {
-    let that = this;
-    prepareDescriptionView(that);
     showView("descriptionView");
-
 }
 
 function showView(view) {
